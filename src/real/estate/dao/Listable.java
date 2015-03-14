@@ -12,4 +12,5 @@ package real.estate.dao;
  */
 public interface Listable {
     
+    
 }
