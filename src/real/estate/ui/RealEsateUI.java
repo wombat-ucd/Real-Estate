@@ -5,7 +5,8 @@
  */
 
 package real.estate.ui;
-
+import real.estate.dao.List;
+import real.estate.dao.Listable;
 /**
  *
  * @author Chathu
@@ -77,23 +78,17 @@ public class RealEsateUI extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Lot Number:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
-
-        jTextField1.setText("jTextField1");
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 220, 190, -1));
-
-        jTextField2.setText("jTextField1");
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 180, 190, -1));
-
-        jTextField3.setText("jTextField1");
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 140, 190, -1));
-
-        jTextField4.setText("jTextField1");
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 100, 190, -1));
 
-        jTextField5.setText("jTextField1");
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 60, 190, -1));
-
-        jTextField6.setText("jTextField6");
         jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 260, 190, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -106,6 +101,11 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Next");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 160, -1));
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -123,6 +123,11 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton6.setText("Reset");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 170, -1));
 
         jButton7.setText("jButton1");
@@ -142,6 +147,18 @@ public class RealEsateUI extends javax.swing.JFrame {
         jTextField5.setText(null);
         jTextField6.setText(null);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
     /**
      * @param args the command line arguments
