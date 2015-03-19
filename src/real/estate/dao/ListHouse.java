@@ -174,7 +174,9 @@ public class ListHouse implements Listable {
 //    }
     @Override
     public int compareTo(Listable other) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      ListHouse other1 = (ListHouse)other;
+       return (this.lotNumber-other1.lotNumber); 
     }
 
+  
 }
