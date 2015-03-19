@@ -77,23 +77,11 @@ public class RealEsateUI extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Lot Number:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
-
-        jTextField1.setText("jTextField1");
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 220, 190, -1));
-
-        jTextField2.setText("jTextField1");
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 180, 190, -1));
-
-        jTextField3.setText("jTextField1");
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 140, 190, -1));
-
-        jTextField4.setText("jTextField1");
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 100, 190, -1));
-
-        jTextField5.setText("jTextField1");
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 60, 190, -1));
-
-        jTextField6.setText("jTextField6");
         jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 260, 190, -1));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
