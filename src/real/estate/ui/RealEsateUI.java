@@ -82,15 +82,13 @@ public class RealEsateUI extends javax.swing.JFrame {
         jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 180, 190, -1));
         jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 140, 190, -1));
         jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 100, 190, -1));
-<<<<<<< HEAD
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
-=======
->>>>>>> origin/master
+
         jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 60, 190, -1));
         jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 260, 190, -1));
 
