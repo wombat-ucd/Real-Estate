@@ -24,10 +24,7 @@ public class ListHouse implements Listable {
     private int squareFeet;
     private int bedRooms;
 
-//    public ListHouse(int max_list) {
-//        no_of_item = 1;
-//        list = new int[max_list];
-//    }
+
     public ListHouse(String lastName, String firstName, int lotNumber,
             int price, int squareFeet, int bedRooms) {
         this.lastName = lastName;
@@ -70,9 +67,7 @@ public class ListHouse implements Listable {
         this.position = position;
     }
 
-    public int length() {
-        return no_of_item;
-    }
+   
 
     public int generateList(int max_list) {
 
@@ -133,45 +128,14 @@ public class ListHouse implements Listable {
         return position;
     }
 
-    public void printList() {
-        for (int i = 1; i <= max_list; i++) {
-            System.out.println(list[i]);
-
-        }
-
-    }
+   
 
     public Listable copy() {
         ListHouse list1 = new ListHouse(lastName, firstName, lotNumber, price, squareFeet, bedRooms);
         return list1;
     }
 
-//     public Listable getNextItem() 
-//    {
-//       
-//        if (position == no_of_item - 1) {
-//            position = 0;
-//        } else {
-//            position++;
-//        }
-//        return copy();
-//    }
-//    public static void main(String[] args) {
-//
-//        ListHouse li = new ListHouse();
-//        li.generateList(max_list);
-//        li.insert(10);
-//        li.insert(20);
-//        li.insert(30);
-//        li.insert(40);
-//        li.insert(50);
-//        li.printList();
-//        System.out.println("----------");
-//        li.delete(40);
-//        li.printList();
-//        System.out.println("----------");
-//        li.find(10);
-//    }
+
     @Override
     public int compareTo(Listable other) {
       ListHouse other1 = (ListHouse)other;
