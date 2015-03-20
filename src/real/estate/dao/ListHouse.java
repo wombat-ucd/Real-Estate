@@ -177,6 +177,24 @@ public class ListHouse implements Listable {
       ListHouse other1 = (ListHouse)other;
        return (this.lotNumber-other1.lotNumber); 
     }
+    public String firstName(){
+        return firstName;
+    }
+    public String lastName(){
+        return lastName;
+    }
+    public int lotNumber(){
+        return lotNumber;
+    }
+    public int price(){
+        return price;
+    }
+    public int squareFeet(){
+        return squareFeet;
+    }
+    public int bedRooms(){
+        return bedRooms;
+    }
 
   
 }
