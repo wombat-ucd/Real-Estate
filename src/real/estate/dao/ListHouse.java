@@ -11,7 +11,11 @@ package real.estate.dao;
  */
 public class ListHouse implements Listable {
 
-
+    public int no_of_item;
+    public int[] list;
+    private static final int max_list = 5;
+    public int size;
+    public int position;
 
     private String lastName;
     private String firstName;
@@ -30,6 +34,47 @@ public class ListHouse implements Listable {
         this.bedRooms = bedRooms;
     }
 
+    public int getNo_of_item() {
+        return no_of_item;
+    }
+
+    public void setNo_of_item(int no_of_item) {
+        this.no_of_item = no_of_item;
+    }
+
+    public int[] getList() {
+        return list;
+    }
+
+    public void setList(int[] list) {
+        this.list = list;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public int generateList(int max_list) {
+
+        for (int i = 1; i <= max_list; i++) {
+
+        }
+
+        return no_of_item;
+
+    }
 
     public Listable copy() {
         ListHouse list1 = new ListHouse(lastName, firstName, lotNumber, price, squareFeet, bedRooms);
