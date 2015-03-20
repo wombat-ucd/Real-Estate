@@ -9,7 +9,7 @@ package real.estate.dao;
  *
  * @author Chathu
  */
-public abstract class List  {
+public abstract class List  implements Listable{
 
     public Listable[] list;         
     public int num_of_items;              

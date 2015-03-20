@@ -11,8 +11,6 @@ package real.estate.dao;
  */
 public class ListHouse implements Listable {
 
-
-
     private String lastName;
     private String firstName;
     private int lotNumber;
