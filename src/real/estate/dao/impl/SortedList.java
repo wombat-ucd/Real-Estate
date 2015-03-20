@@ -13,8 +13,6 @@ import real.estate.dao.*;
  */
 public class SortedList extends List {
 
-    // Instantiates and returns a reference to an empty list object 
-    // with room for maxItems elements 
     public SortedList(int maxItems) {
         super(maxItems);
     }
@@ -58,8 +56,20 @@ public class SortedList extends List {
 
     @Override
     public void insert(Listable item) {
-        throw new UnsupportedOperationException("Not supported yet.");
-        //Remove above line and implement the code
+        boolean search = (position < num_of_items);
+        while (search) {
+            if (item.compareTo(list[position]) < 0) {
+                search = false;
+            } else {
+                position++;
+                search = (position < num_of_items);
+            }
+        }
+        for (int index = num_of_items; index > position; index--) {
+            list[index] = list[index - 1];
+        }
+        list[position] = item.copy();
+        num_of_items++;
     }
 
     @Override
@@ -68,15 +78,5 @@ public class SortedList extends List {
         //Remove above line and implement the code
     }
 
-    @Override
-    public int compareTo(Listable other) {
-        throw new UnsupportedOperationException("Not supported yet.");
-
-    }
-
-    @Override
-    public Listable copy() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
 }
