@@ -5,8 +5,6 @@
  */
 
 package real.estate.ui;
-import real.estate.dao.List;
-import real.estate.dao.Listable;
 /**
  *
  * @author Chathu
