@@ -24,7 +24,6 @@ public class ListHouse implements Listable {
     private int squareFeet;
     private int bedRooms;
 
-
     public ListHouse(String lastName, String firstName, int lotNumber,
             int price, int squareFeet, int bedRooms) {
         this.lastName = lastName;
@@ -67,8 +66,6 @@ public class ListHouse implements Listable {
         this.position = position;
     }
 
-   
-
     public int generateList(int max_list) {
 
         for (int i = 1; i <= max_list; i++) {
@@ -79,86 +76,39 @@ public class ListHouse implements Listable {
 
     }
 
-    public void insert(int item) {
-        if (max_list < 30) {
-            list[no_of_item] = item;
-        }
-        no_of_item++;
-        position++;
-
-    }
-
-    public void delete(int index) {
-        if (index <= position) {
-            for (int i = 0; i <= max_list; i++) {
-                list[i] = list[i + 1];
-
-            }
-        }
-        no_of_item--;
-        position--;
-
-    }
-
-    public boolean isEmpty() {
-        if (no_of_item == 5) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public int find(int item) {
-        boolean valueInList = true;
-        for (int i = 0; i < no_of_item; i++) {
-
-            if (list[i] == item) {
-
-                System.out.print(i + " ");
-
-            }
-            if (valueInList != true) {
-                System.out.println("The value not in the list");
-            }
-
-        }
-
-        System.out.println();
-
-        return position;
-    }
-
-   
-
     public Listable copy() {
         ListHouse list1 = new ListHouse(lastName, firstName, lotNumber, price, squareFeet, bedRooms);
         return list1;
     }
 
-
     @Override
     public int compareTo(Listable other) {
-      ListHouse other1 = (ListHouse)other;
-       return (this.lotNumber-other1.lotNumber); 
+        ListHouse other1 = (ListHouse) other;
+        return (this.lotNumber - other1.lotNumber);
     }
-    public String firstName(){
+
+    public String firstName() {
         return firstName;
     }
-    public String lastName(){
+
+    public String lastName() {
         return lastName;
     }
-    public int lotNumber(){
+
+    public int lotNumber() {
         return lotNumber;
     }
-    public int price(){
+
+    public int price() {
         return price;
     }
-    public int squareFeet(){
+
+    public int squareFeet() {
         return squareFeet;
     }
-    public int bedRooms(){
+
+    public int bedRooms() {
         return bedRooms;
     }
 
-  
 }
