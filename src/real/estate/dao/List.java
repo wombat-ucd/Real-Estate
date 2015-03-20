@@ -9,30 +9,28 @@ package real.estate.dao;
  *
  * @author Chathu
  */
-public abstract class List implements Listable {
+public abstract class List  {
 
-    protected Listable[] list;          // Array to hold this list’s elements 
-    protected int numItems;             // Number of elements on this list 
-    protected int currentPos;           // Current position for iteration
+    public Listable[] list;         
+    public int num_of_items;              
+    public int position;           
 
-    // Instantiates and returns a reference to an empty list object 
-    // with room for maxItems elements 
+    
     public List(int maxItems) {
-        numItems = 0;
+        num_of_items = 0;
         list = new Listable[maxItems];
     }
 
-    public boolean isFull() // Returns whether this list is full 
+    public boolean isFull() 
     {
-        return (list.length == numItems);
+        return (list.length == num_of_items);
     }
 
-    public int lengthIs() // Returns the number of elements on this list 
+    public int lengthIs() 
     {
-        return numItems;
+        return num_of_items;
     }
-    // Returns true if an element with the same key as item is on this list; 
-    // otherwise, returns false
+    
     public abstract boolean isThere(Listable item);
 
    // Returns a copy of the list element with the same key as item
@@ -41,23 +39,23 @@ public abstract class List implements Listable {
     // Adds a copy of item to this list 
     public abstract void insert(Listable item);
 
-    // Deletes the element with the same key as item from this list 
+   
     public abstract void delete(Listable item);
 
-    // Initializes current position for an iteration through this list
+    
     public void reset() 
     {
-        currentPos = 0;
+        position = 0;
     }
     
-    // Returns copy of the next element on this list 
+    
     public Listable getNextItem() 
     {
-        Listable next = list[currentPos];
-        if (currentPos == numItems - 1) {
-            currentPos = 0;
+        Listable next = list[position];
+        if (position == num_of_items - 1) {
+            position = 0;
         } else {
-            currentPos++;
+            position++;
         }
         return next.copy();
     }
