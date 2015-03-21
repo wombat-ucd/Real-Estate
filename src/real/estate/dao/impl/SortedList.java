@@ -120,13 +120,4 @@ public class SortedList extends List {
         num_of_items--;
     }
 
-    @Override
-    public int compareTo(Listable other) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public Listable copy() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 }
