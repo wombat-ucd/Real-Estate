@@ -48,6 +48,15 @@ public class RealEsateUI extends javax.swing.JFrame {
         return house;
     }
 
+    private void clearHouse() {
+        txtLotNumber.setText("");
+        txtFirstName.setText("");
+        txtFirstName.setText("");
+        txtPrice.setText("");
+        txtSqFt.setText("");
+        txtNumberOfBedrooms.setText("");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
