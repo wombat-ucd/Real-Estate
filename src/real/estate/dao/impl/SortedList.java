@@ -27,6 +27,7 @@ public class SortedList extends List {
 
     // Returns true if an element with the same key as item is on this list; 
     // otherwise, returns false 
+    @Override
     public boolean isThere(Listable item) {
         int compareResult;
         int midPoint;
@@ -57,6 +58,7 @@ public class SortedList extends List {
     }
 
     // Returns a copy of the list element with the same key as item 
+    @Override
     public Listable retrieve(Listable item) {
         int compareResult;
 
@@ -81,6 +83,7 @@ public class SortedList extends List {
         return list[midPoint].copy();
     }
 
+    @Override
     public void insert(Listable item) // Adds a copy of item to this list 
     {
         int location = 0;
@@ -105,6 +108,7 @@ public class SortedList extends List {
     }
     
     // Deletes the element that matches item from this list 
+    @Override
     public void delete(Listable item) 
     {
         int location = 0;
