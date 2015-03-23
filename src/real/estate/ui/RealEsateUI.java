@@ -5,13 +5,17 @@
  */
 package real.estate.ui;
 
+import javax.swing.JOptionPane;
 import real.estate.dao.ListHouse;
+import real.estate.dao.impl.SortedList;
 
 /**
  *
  * @author Chathu
  */
 public class RealEsateUI extends javax.swing.JFrame {
+
+    private SortedList list = new SortedList();
 
     /**
      * Creates new form RealEsateUI
@@ -193,6 +197,14 @@ public class RealEsateUI extends javax.swing.JFrame {
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
+        list.reset();
+        if (list.lengthIs() == 0) {
+            clearHouse();
+        } else {
+            ListHouse house = (ListHouse) list.getNextItem();
+            showHouse(house);
+        }
+        JOptionPane.showMessageDialog(this, "List reset", "Successful", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
