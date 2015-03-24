@@ -211,7 +211,7 @@ public class RealEsateUI extends javax.swing.JFrame {
             house = (ListHouse) list.getNextItem();
             showHouse(house);
         }
-        JOptionPane.showMessageDialog(this, "List reset", "Successful", JOptionPane.INFORMATION_MESSAGE);
+        lblStatus.setText( "List reset");
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
