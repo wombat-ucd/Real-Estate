@@ -187,17 +187,10 @@ public class RealEsateUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
-        txtSqFt.setText(null);
-        txtPrice.setText(null);
-        txtLastName.setText(null);
-        txtFirstName.setText(null);
-        txtLotNumber.setText(null);
-        txtNumberOfBedrooms.setText(null);
+       clearHouse();
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        // TODO add your handling code here:
         list.reset();
         if (list.lengthIs() == 0) {
             clearHouse();
