@@ -31,7 +31,7 @@ public class RealEsateUI extends javax.swing.JFrame {
         txtLastName.setText(house.lastName());
         txtPrice.setText(Integer.toString(house.price()));
         txtSqFt.setText(Integer.toString(house.squareFeet()));
-        txtNumberOfBedrooms.setText(Integer.toString(house.bedRooms()));
+        txtNumberOfBedrooms.setText(Integer.toString(house.numberOfBedRooms()));
     }
 
     // Returns current screen information as a ListHouse 
