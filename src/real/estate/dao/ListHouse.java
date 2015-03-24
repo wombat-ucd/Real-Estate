@@ -16,7 +16,7 @@ public class ListHouse implements Listable {
     private int lotNumber;
     private int price;
     private int squareFeet;
-    private int numberOfBedRooms;
+    private int bedRooms;
 
 
     public String firstName() {
@@ -39,8 +39,8 @@ public class ListHouse implements Listable {
         return squareFeet;
     }
 
-    public int numberOfBedRooms() {
-        return numberOfBedRooms;
+    public int bedRooms() {
+        return bedRooms;
     }
     
     public ListHouse(String lastName, String firstName, int lotNumber, int price, int squareFeet, int bedRooms) {
@@ -49,12 +49,12 @@ public class ListHouse implements Listable {
         this.lotNumber = lotNumber;
         this.price = price;
         this.squareFeet = squareFeet;
-        this.numberOfBedRooms = bedRooms;
+        this.bedRooms = bedRooms;
     }
 
     @Override
     public Listable copy() {
-        ListHouse house = new ListHouse(lastName, firstName, lotNumber, price, squareFeet, numberOfBedRooms);
+        ListHouse house = new ListHouse(lastName, firstName, lotNumber, price, squareFeet, bedRooms);
         return house;
     }
 

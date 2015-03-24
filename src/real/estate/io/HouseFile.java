@@ -56,7 +56,7 @@ public static void putDataToFile(ListHouse houseItem){
     outFile.println(houseItem.lotNumber());
     outFile.println(houseItem.price());
     outFile.println(houseItem.squareFeet());
-    outFile.println(houseItem.numberOfBedRooms());
+    outFile.println(houseItem.bedRooms());
     
 }
 public static ListHouse getNextHouseItem() throws IOException{
