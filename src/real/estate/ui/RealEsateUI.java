@@ -16,6 +16,7 @@ import real.estate.dao.impl.SortedList;
 public class RealEsateUI extends javax.swing.JFrame {
 
     private SortedList list = new SortedList();
+    ListHouse house;
 
     /**
      * Creates new form RealEsateUI
@@ -91,6 +92,7 @@ public class RealEsateUI extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        lblStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Real Estate");
@@ -145,6 +147,11 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 160, -1));
 
         btnNext.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -158,6 +165,11 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 170, -1));
 
         btnClear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -180,6 +192,7 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         jButton7.setText("jButton1");
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+        jPanel1.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 260, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 480));
 
@@ -187,7 +200,7 @@ public class RealEsateUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-       clearHouse();
+        clearHouse();
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -195,7 +208,7 @@ public class RealEsateUI extends javax.swing.JFrame {
         if (list.lengthIs() == 0) {
             clearHouse();
         } else {
-            ListHouse house = (ListHouse) list.getNextItem();
+            house = (ListHouse) list.getNextItem();
             showHouse(house);
         }
         JOptionPane.showMessageDialog(this, "List reset", "Successful", JOptionPane.INFORMATION_MESSAGE);
@@ -214,6 +227,22 @@ public class RealEsateUI extends javax.swing.JFrame {
         //Save Data Before closing
         System.exit(0);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        house = getHouse();
+        if (list.isThere(house)) {
+            lblStatus.setText("Lot number already in use");
+        } else {
+            list.insert(house);
+            lblStatus.setText("House added to list");
+        }
+
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,6 +299,7 @@ public class RealEsateUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblStatus;
     private javax.swing.JTextField txtFirstName;
     private javax.swing.JTextField txtLastName;
     private javax.swing.JTextField txtLotNumber;
