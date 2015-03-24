@@ -22,6 +22,7 @@ public class RealEsateUI extends javax.swing.JFrame {
      */
     public RealEsateUI() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     // Display information about parameter house on screen 
