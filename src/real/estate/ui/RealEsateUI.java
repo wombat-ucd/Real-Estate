@@ -73,6 +73,7 @@ public class RealEsateUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        lblStatus = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -92,7 +93,6 @@ public class RealEsateUI extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        lblStatus = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Real Estate");
@@ -104,6 +104,10 @@ public class RealEsateUI extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblStatus.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 260, 20));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Number of Bedrooms:");
@@ -192,7 +196,6 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         jButton7.setText("jButton1");
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
-        jPanel1.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 260, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 480));
 
