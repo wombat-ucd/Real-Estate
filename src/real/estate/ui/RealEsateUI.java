@@ -214,7 +214,7 @@ public class RealEsateUI extends javax.swing.JFrame {
             house = (ListHouse) list.getNextItem();
             showHouse(house);
         }
-        lblStatus.setText( "List reset");
+        lblStatus.setText("List reset");
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
@@ -232,15 +232,18 @@ public class RealEsateUI extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        // TODO add your handling code here:
-        house = getHouse();
-        if (list.isThere(house)) {
-            lblStatus.setText("Lot number already in use");
-        } else {
-            list.insert(house);
-            lblStatus.setText("House added to list");
+        try {
+            house = getHouse();
+            if (list.isThere(house)) {
+                lblStatus.setText("Lot number already in use");
+            } else {
+                list.insert(house);
+                lblStatus.setText("House added to list");
+            }
+        } catch (NumberFormatException badHouseData) {
+            // Text field info incorrectly formated 
+            lblStatus.setText("Number? " + badHouseData.getMessage());
         }
-
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
