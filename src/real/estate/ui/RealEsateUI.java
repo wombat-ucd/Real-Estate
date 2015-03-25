@@ -219,6 +219,12 @@ public class RealEsateUI extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // TODO add your handling code here:
+        if (list.lengthIs() == 0){ 
+            lblStatus.setText("list is empty!");
+        } else { 
+            house = (ListHouse)list.getNextItem(); 
+            showHouse(house); 
+            lblStatus.setText("Next house displayed"); }
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void txtLotNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLotNumberActionPerformed
