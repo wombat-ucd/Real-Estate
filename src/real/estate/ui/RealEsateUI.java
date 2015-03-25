@@ -264,7 +264,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 lblStatus.setText("Lot number not on list");
             }
         } catch (NumberFormatException badHouseData) {
-            //lblStatus.setText("Number? " + badHouseData.getMessage());
+            lblStatus.setText("Number? " + badHouseData.getMessage());
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
