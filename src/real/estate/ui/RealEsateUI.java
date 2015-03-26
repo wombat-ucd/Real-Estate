@@ -147,6 +147,11 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         btnFind.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnFind.setText("Find");
+        btnFind.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFindActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 160, -1));
 
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -267,6 +272,24 @@ public class RealEsateUI extends javax.swing.JFrame {
             lblStatus.setText("Number? " + badHouseData.getMessage());
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+        // TODO add your handling code here:
+        int lotNumber;
+        try {
+            lotNumber = Integer.parseInt(txtLotNumber.getText());
+            house = new ListHouse("", "", lotNumber, 0, 0, 0);
+            if (list.isThere(house)) {
+                house = (ListHouse) list.retrieve(house);
+                showHouse(house);
+                lblStatus.setText("House found");
+            } else {
+                lblStatus.setText("House not found");
+            }
+        } catch (NumberFormatException badHouseData) {
+            // Text field info incorrectly formated statusLabel.setText("Number? " + badHouseData.getMessage()); } 
+        }
+    }//GEN-LAST:event_btnFindActionPerformed
 
     /**
      * @param args the command line arguments
