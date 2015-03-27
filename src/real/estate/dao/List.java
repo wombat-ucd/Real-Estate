@@ -13,7 +13,11 @@ public abstract class List {
 
     public Listable[] list;         
     public int num_of_items;              
-    public int position;           
+    public int position;     
+    
+    public List(){
+        this(100);
+    }
 
     
     public List(int maxItems) {
