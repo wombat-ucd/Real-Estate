@@ -218,6 +218,8 @@ public class RealEsateUI extends javax.swing.JFrame {
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         clearHouse();
+        lblStatus.setText("");
+
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -253,10 +255,10 @@ public class RealEsateUI extends javax.swing.JFrame {
             HouseFile.writeJSONToFile(propertyList);
         } catch (IOException ex) {
             Logger.getLogger(RealEsateUI.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
+        } finally {
             System.exit(0);
         }
-        
+
     }//GEN-LAST:event_formWindowClosing
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
