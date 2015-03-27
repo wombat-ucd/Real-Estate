@@ -29,7 +29,7 @@ public class HouseFile {
     private static Gson gson = new Gson();
 
     public static SortedList readJSONFileToList() throws FileNotFoundException, IOException{
-        SortedList propertyList = null;
+        SortedList propertyList = new SortedList();
         
         try (BufferedReader br = Files.newBufferedReader(jsonFileLocation, charSet)) {
             propertyList = gson.fromJson(br, SortedList.class);
