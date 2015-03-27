@@ -70,6 +70,7 @@ public class RealEsateUI extends javax.swing.JFrame {
         txtPrice.setText("");
         txtSqFt.setText("");
         txtNumberOfBedrooms.setText("");
+        lblStatus.setText("");
     }
 
     /**
@@ -218,7 +219,6 @@ public class RealEsateUI extends javax.swing.JFrame {
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         clearHouse();
-        lblStatus.setText("");
 
     }//GEN-LAST:event_btnClearActionPerformed
 
