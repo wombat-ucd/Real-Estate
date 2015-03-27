@@ -3,15 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package real.estate.io;
 
+import com.google.gson.Gson;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import real.estate.dao.ListHouse;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import real.estate.dao.impl.SortedList;
 
 /**
  *
@@ -19,81 +24,26 @@ import real.estate.dao.ListHouse;
  */
 public class HouseFile {
 
-private static BufferedReader inFile;
-private static PrintWriter outFile;
-private static boolean isInFileOpen = false;
-private static boolean isOutFileOpen = false;
-private static String stringInput ="";
-    
-public static void reset() throws IOException{
-    if(isInFileOpen){
-        inFile.close();
-    }
-    if(isOutFileOpen){
-        outFile.close();
-    }
-    inFile = new BufferedReader(new FileReader("house_details.dat"));
-    isInFileOpen = true;
-    stringInput = inFile.readLine();
-}
-public static void resetForWrite() throws IOException{
-    if(isInFileOpen){
-        inFile.close();
-    }
-    if(isOutFileOpen){
-        outFile.close();
-    }
-    outFile = new PrintWriter(new FileWriter("house_details.dat"));
-    isOutFileOpen = true;
-}
-public static boolean isMoreHousesExist(){
-    return stringInput != null;
-   
-    }
-public static void putDataToFile(ListHouse houseItem){
-    outFile.println(houseItem.firstName());
-    outFile.println(houseItem.lastName());
-    outFile.println(houseItem.lotNumber());
-    outFile.println(houseItem.price());
-    outFile.println(houseItem.squareFeet());
-    outFile.println(houseItem.numberOfBedRooms());
-    
-}
-public static ListHouse getNextHouseItem() throws IOException{
-    String lastName;
-    String firstName;
-    int lotNo;
-    int price;
-    int squareFeet;
-    int noOfBedRooms;
-    
-    lastName=stringInput;
-    firstName=inFile.readLine();
-    lotNo=Integer.parseInt(inFile.readLine());
-    price=Integer.parseInt(inFile.readLine());
-    squareFeet=Integer.parseInt(inFile.readLine());
-    noOfBedRooms=Integer.parseInt(inFile.readLine());
-    
-    stringInput=inFile.readLine();
-    
-    ListHouse hs1=new ListHouse(lastName,firstName,lotNo,price,squareFeet,noOfBedRooms);
-    System.out.println("correct");
-    return hs1;
-}
-public static void closeFile() throws IOException{
-    if(isInFileOpen)
-        inFile.close();
-    if(isOutFileOpen)
-        outFile.close();
-}
+    private static Path jsonFileLocation = Paths.get("housesData.json");
+    private static Charset charSet = Charset.forName("UTF-8");
+    private static Gson gson = new Gson();
 
-public static void main(String []args) throws IOException{
-    HouseFile hs=new HouseFile();
-    hs.reset();
-    hs.resetForWrite();
-    hs.isMoreHousesExist();
-   // hs.getNextHouseItem();
-    
+    public static SortedList readJSONFileToList() throws FileNotFoundException, IOException{
+        SortedList propertyList = new SortedList();
+        
+        try (BufferedReader br = Files.newBufferedReader(jsonFileLocation, charSet)) {
+            propertyList = gson.fromJson(br, SortedList.class);
+        } 
+            return propertyList;
+        
+
+    }
+
+    public static void writeJSONToFile(SortedList propertyList) throws IOException {
+        String jsonString = gson.toJson(propertyList);
+        try (BufferedWriter writer = Files.newBufferedWriter(jsonFileLocation, charSet)) {
+            writer.write(jsonString);
+        }
     }
 
 }

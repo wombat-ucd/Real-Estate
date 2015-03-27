@@ -5,9 +5,12 @@
  */
 package real.estate.ui;
 
-import javax.swing.JOptionPane;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import real.estate.dao.ListHouse;
 import real.estate.dao.impl.SortedList;
+import real.estate.io.HouseFile;
 
 /**
  *
@@ -15,7 +18,7 @@ import real.estate.dao.impl.SortedList;
  */
 public class RealEsateUI extends javax.swing.JFrame {
 
-    private SortedList list = new SortedList();
+    private SortedList propertyList = new SortedList();
     ListHouse house;
 
     /**
@@ -24,6 +27,12 @@ public class RealEsateUI extends javax.swing.JFrame {
     public RealEsateUI() {
         initComponents();
         setLocationRelativeTo(null);
+        try {
+            //HouseFile.writeJSONToFile(propertyList);
+            propertyList = HouseFile.readJSONFileToList();
+        } catch (IOException ex) {
+            Logger.getLogger(RealEsateUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // Display information about parameter house on screen 
@@ -57,7 +66,7 @@ public class RealEsateUI extends javax.swing.JFrame {
     private void clearHouse() {
         txtLotNumber.setText("");
         txtFirstName.setText("");
-        txtFirstName.setText("");
+        txtLastName.setText("");
         txtPrice.setText("");
         txtSqFt.setText("");
         txtNumberOfBedrooms.setText("");
@@ -212,11 +221,11 @@ public class RealEsateUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        list.reset();
-        if (list.lengthIs() == 0) {
+        propertyList.reset();
+        if (propertyList.lengthIs() == 0) {
             clearHouse();
         } else {
-            house = (ListHouse) list.getNextItem();
+            house = (ListHouse) propertyList.getNextItem();
             showHouse(house);
         }
         lblStatus.setText("List reset");
@@ -224,10 +233,10 @@ public class RealEsateUI extends javax.swing.JFrame {
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         // TODO add your handling code here:
-        if (list.lengthIs() == 0) {
+        if (propertyList.lengthIs() == 0) {
             lblStatus.setText("list is empty!");
         } else {
-            house = (ListHouse) list.getNextItem();
+            house = (ListHouse) propertyList.getNextItem();
             showHouse(house);
             lblStatus.setText("Next house displayed");
         }
@@ -239,17 +248,24 @@ public class RealEsateUI extends javax.swing.JFrame {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         this.dispose();                     // Close window 
-        //Save Data Before closing
-        System.exit(0);
+        try {
+            //Save Data Before closing
+            HouseFile.writeJSONToFile(propertyList);
+        } catch (IOException ex) {
+            Logger.getLogger(RealEsateUI.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            System.exit(0);
+        }
+        
     }//GEN-LAST:event_formWindowClosing
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         try {
             house = getHouse();
-            if (list.isThere(house)) {
+            if (propertyList.isThere(house)) {
                 lblStatus.setText("Lot number already in use");
             } else {
-                list.insert(house);
+                propertyList.insert(house);
                 lblStatus.setText("House added to list");
             }
         } catch (NumberFormatException badHouseData) {
@@ -262,8 +278,8 @@ public class RealEsateUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             house = getHouse();
-            if (list.isThere(house)) {
-                list.delete(house);
+            if (propertyList.isThere(house)) {
+                propertyList.delete(house);
                 lblStatus.setText("House deleted");
             } else {
                 lblStatus.setText("Lot number not on list");
@@ -279,8 +295,8 @@ public class RealEsateUI extends javax.swing.JFrame {
         try {
             lotNumber = Integer.parseInt(txtLotNumber.getText());
             house = new ListHouse("", "", lotNumber, 0, 0, 0);
-            if (list.isThere(house)) {
-                house = (ListHouse) list.retrieve(house);
+            if (propertyList.isThere(house)) {
+                house = (ListHouse) propertyList.retrieve(house);
                 showHouse(house);
                 lblStatus.setText("House found");
             } else {
