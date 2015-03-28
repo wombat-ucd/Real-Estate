@@ -32,7 +32,7 @@ public class SortedList extends List {
         int compareResult;
         int midPoint;
         int first = 0;
-        int last = num_of_items - 1;
+        int last = numberOfItems - 1;
         boolean moreToSearch = (first <= last);
         boolean found = false;
 
@@ -63,7 +63,7 @@ public class SortedList extends List {
         int compareResult;
 
         int first = 0;
-        int last = num_of_items - 1;
+        int last = numberOfItems - 1;
         int midPoint = (first + last) / 2;
         boolean found = false;
         while (!found) {
@@ -87,7 +87,7 @@ public class SortedList extends List {
     public void insert(Listable item) // Adds a copy of item to this list 
     {
         int location = 0;
-        boolean moreToSearch = (location < num_of_items);
+        boolean moreToSearch = (location < numberOfItems);
         while (moreToSearch) {
             if (item.compareTo(list[location]) < 0) // item is less 
             {
@@ -95,16 +95,16 @@ public class SortedList extends List {
             } else // item is more 
             {
                 location++;
-                moreToSearch = (location < num_of_items);
+                moreToSearch = (location < numberOfItems);
             }
         }
         {
-            for (int index = num_of_items; index > location; index--) {
+            for (int index = numberOfItems; index > location; index--) {
                 list[index] = list[index - 1];
             }
         }
         list[location] = item.copy();
-        num_of_items++;
+        numberOfItems++;
     }
     
     // Deletes the element that matches item from this list 
@@ -117,11 +117,11 @@ public class SortedList extends List {
             location++;
         }
         for (int index = location + 1;
-                index < num_of_items;
+                index < numberOfItems;
                 index++) {
             list[index - 1] = list[index];
         }
-        num_of_items--;
+        numberOfItems--;
     }
 
 }

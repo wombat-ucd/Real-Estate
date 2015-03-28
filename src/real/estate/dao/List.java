@@ -11,28 +11,32 @@ package real.estate.dao;
  */
 public abstract class List {
 
+    /**
+     * List to store Listable items
+     */
     public Listable[] list;         
-    public int num_of_items;              
+
+    /**
+     * Number of items in list
+     */
+    public int numberOfItems;              
     public int position;     
     
-    public List(){
-        this(100);
-    }
 
     
     public List(int maxItems) {
-        num_of_items = 0;
+        numberOfItems = 0;
         list = new Listable[maxItems];
     }
 
     public boolean isFull() 
     {
-        return (list.length == num_of_items);
+        return (list.length == numberOfItems);
     }
 
     public int lengthIs() 
     {
-        return num_of_items;
+        return numberOfItems;
     }
     
     public abstract boolean isThere(Listable item);
@@ -56,7 +60,7 @@ public abstract class List {
     public Listable getNextItem() 
     {
         Listable next = list[position];
-        if (position == num_of_items - 1) {
+        if (position == numberOfItems - 1) {
             position = 0;
         } else {
             position++;
