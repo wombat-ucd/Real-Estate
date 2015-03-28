@@ -18,6 +18,9 @@ public class ListHouse implements Listable {
     private int squareFeet;
     private int numberOfBedRooms;
 
+    public ListHouse(){
+        
+    }
 
     public String firstName() {
         return firstName;
