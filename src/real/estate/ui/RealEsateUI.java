@@ -59,8 +59,8 @@ public class RealEsateUI extends javax.swing.JFrame {
         price = Integer.parseInt(txtPrice.getText());
         squareFeet = Integer.parseInt(txtSqFt.getText());
         bedRooms = Integer.parseInt(txtNumberOfBedrooms.getText());
-        ListHouse house = new ListHouse(lastName, firstName, lotNumber, price, squareFeet, bedRooms);
-        return house;
+        ListHouse newHouse = new ListHouse(lastName, firstName, lotNumber, price, squareFeet, bedRooms);
+        return newHouse;
     }
 
     private void clearHouse() {
