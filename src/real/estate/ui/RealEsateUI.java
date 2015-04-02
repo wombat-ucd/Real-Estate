@@ -84,7 +84,7 @@ public class RealEsateUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panel = new javax.swing.JPanel();
         lblStatus = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -115,36 +115,36 @@ public class RealEsateUI extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(127, 140, 141));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel.setBackground(new java.awt.Color(127, 140, 141));
+        panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblStatus.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 260, 20));
+        panel.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 260, 20));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Number of Bedrooms:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Square Feet:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Price:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
+        panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Last Name:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
+        panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("First Name:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+        panel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Lot Number:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+        panel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
         btnFind.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnFind.setText("Find");
@@ -153,7 +153,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnFindActionPerformed(evt);
             }
         });
-        jPanel1.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 160, -1));
+        panel.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 160, -1));
 
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnDelete.setText("Delete");
@@ -162,7 +162,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 160, -1));
+        panel.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 160, -1));
 
         btnNext.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnNext.setText("Next");
@@ -171,7 +171,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnNextActionPerformed(evt);
             }
         });
-        jPanel1.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 160, -1));
+        panel.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 160, -1));
 
         btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd.setText("Add");
@@ -180,7 +180,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnAddActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 170, -1));
+        panel.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 170, -1));
 
         btnClear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnClear.setText("Clear");
@@ -189,7 +189,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnClearActionPerformed(evt);
             }
         });
-        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 170, -1));
+        panel.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 170, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnReset.setText("Reset");
@@ -198,24 +198,24 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 170, -1));
+        panel.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 170, -1));
 
         jButton7.setText("jButton1");
-        jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
-        jPanel1.add(txtLotNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 190, -1));
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 190, -1));
-        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 190, -1));
+        panel.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+        panel.add(txtLotNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 190, -1));
+        panel.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 190, -1));
+        panel.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 190, -1));
 
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPriceActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 190, -1));
-        jPanel1.add(txtSqFt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 190, -1));
-        jPanel1.add(txtNumberOfBedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 190, -1));
+        panel.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 190, -1));
+        panel.add(txtSqFt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 190, -1));
+        panel.add(txtNumberOfBedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 190, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 480));
+        getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -343,8 +343,8 @@ public class RealEsateUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblStatus;
+    private javax.swing.JPanel panel;
     private javax.swing.JFormattedTextField txtFirstName;
     private javax.swing.JFormattedTextField txtLastName;
     private javax.swing.JFormattedTextField txtLotNumber;
