@@ -106,11 +106,10 @@ public class SortedList extends List {
         list[location] = item.copy();
         numberOfItems++;
     }
-    
+
     // Deletes the element that matches item from this list 
     @Override
-    public void delete(Listable item) 
-    {
+    public void delete(Listable item) {
         int location = 0;
 
         while (item.compareTo(list[location]) != 0) {

@@ -289,7 +289,6 @@ public class RealEsateUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
-        // TODO add your handling code here:
         int lotNumber;
         try {
             lotNumber = Integer.parseInt(txtLotNumber.getText());

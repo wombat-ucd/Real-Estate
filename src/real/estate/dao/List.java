@@ -25,9 +25,9 @@ public abstract class List {
      * Position of list
      */
     public int position;
-    
-    public List(){
-        
+
+    public List() {
+
     }
 
     /**
@@ -66,7 +66,7 @@ public abstract class List {
      */
     public abstract boolean isThere(Listable item);
 
-   // Returns a copy of the list element with the same key as item
+     // Returns a copy of the list element with the same key as item
     /**
      * Returns a copy of the list element with the same key as item
      *
@@ -78,12 +78,14 @@ public abstract class List {
     // Adds a copy of item to this list
     /**
      * Adds the inserted value to this list
+     *
      * @param item
      */
     public abstract void insert(Listable item);
 
     /**
-     * Deletes the element with the same key as item from this list 
+     * Deletes the element with the same key as item from this list
+     *
      * @param item
      */
     public abstract void delete(Listable item);
@@ -97,6 +99,7 @@ public abstract class List {
 
     /**
      * Returns copy of the next element on this list
+     *
      * @return
      */
     public Listable getNextItem() {
