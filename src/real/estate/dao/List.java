@@ -25,6 +25,10 @@ public abstract class List {
      * Position of list
      */
     public int position;
+    
+    public List(){
+        
+    }
 
     /**
      * Construct a List instance with a listable array size of maxItem
