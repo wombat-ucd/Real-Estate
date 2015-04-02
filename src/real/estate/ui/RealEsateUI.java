@@ -28,6 +28,7 @@ public class RealEsateUI extends javax.swing.JFrame {
     public RealEsateUI() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new javax.swing.ImageIcon(this.getClass().getResource("/real/estate/res/logo.png")).getImage());
         try {
             //HouseFile.writeJSONToFile(propertyList);
             propertyList = HouseFile.readJSONFileToList();
@@ -91,12 +92,6 @@ public class RealEsateUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtSqFt = new javax.swing.JTextField();
-        txtPrice = new javax.swing.JTextField();
-        txtLastName = new javax.swing.JTextField();
-        txtFirstName = new javax.swing.JTextField();
-        txtLotNumber = new javax.swing.JTextField();
-        txtNumberOfBedrooms = new javax.swing.JTextField();
         btnFind = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
@@ -104,6 +99,12 @@ public class RealEsateUI extends javax.swing.JFrame {
         btnClear = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        txtLotNumber = new javax.swing.JFormattedTextField();
+        txtFirstName = new javax.swing.JFormattedTextField();
+        txtLastName = new javax.swing.JFormattedTextField();
+        txtPrice = new javax.swing.JFormattedTextField();
+        txtSqFt = new javax.swing.JFormattedTextField();
+        txtNumberOfBedrooms = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Real Estate");
@@ -143,18 +144,6 @@ public class RealEsateUI extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Lot Number:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
-        jPanel1.add(txtSqFt, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 220, 190, -1));
-        jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 180, 190, -1));
-        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 140, 190, -1));
-        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 100, 190, -1));
-
-        txtLotNumber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLotNumberActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtLotNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 60, 190, -1));
-        jPanel1.add(txtNumberOfBedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 260, 190, -1));
 
         btnFind.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnFind.setText("Find");
@@ -212,6 +201,18 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         jButton7.setText("jButton1");
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+        jPanel1.add(txtLotNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 190, -1));
+        jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 190, -1));
+        jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 190, -1));
+
+        txtPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPriceActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 190, -1));
+        jPanel1.add(txtSqFt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 190, -1));
+        jPanel1.add(txtNumberOfBedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 190, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 480));
 
@@ -244,10 +245,6 @@ public class RealEsateUI extends javax.swing.JFrame {
             lblStatus.setText("Next house displayed");
         }
     }//GEN-LAST:event_btnNextActionPerformed
-
-    private void txtLotNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLotNumberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtLotNumberActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         this.dispose();                     // Close window 
@@ -293,7 +290,6 @@ public class RealEsateUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
-        // TODO add your handling code here:
         int lotNumber;
         try {
             lotNumber = Integer.parseInt(txtLotNumber.getText());
@@ -309,6 +305,10 @@ public class RealEsateUI extends javax.swing.JFrame {
             // Text field info incorrectly formated statusLabel.setText("Number? " + badHouseData.getMessage()); } 
         }
     }//GEN-LAST:event_btnFindActionPerformed
+
+    private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPriceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -344,11 +344,11 @@ public class RealEsateUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblStatus;
-    private javax.swing.JTextField txtFirstName;
-    private javax.swing.JTextField txtLastName;
-    private javax.swing.JTextField txtLotNumber;
-    private javax.swing.JTextField txtNumberOfBedrooms;
-    private javax.swing.JTextField txtPrice;
-    private javax.swing.JTextField txtSqFt;
+    private javax.swing.JFormattedTextField txtFirstName;
+    private javax.swing.JFormattedTextField txtLastName;
+    private javax.swing.JFormattedTextField txtLotNumber;
+    private javax.swing.JFormattedTextField txtNumberOfBedrooms;
+    private javax.swing.JFormattedTextField txtPrice;
+    private javax.swing.JFormattedTextField txtSqFt;
     // End of variables declaration//GEN-END:variables
 }
