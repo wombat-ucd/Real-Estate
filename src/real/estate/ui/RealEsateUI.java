@@ -115,6 +115,7 @@ public class RealEsateUI extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(127, 140, 141));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblStatus.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
