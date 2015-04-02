@@ -27,6 +27,7 @@ public class RealEsateUI extends javax.swing.JFrame {
     public RealEsateUI() {
         initComponents();
         setLocationRelativeTo(null);
+        setIconImage(new javax.swing.ImageIcon(this.getClass().getResource("/real/estate/res/logo.png")).getImage());
         try {
             //HouseFile.writeJSONToFile(propertyList);
             propertyList = HouseFile.readJSONFileToList();
