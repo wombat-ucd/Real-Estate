@@ -17,6 +17,7 @@ public class SortedList extends List {
     // with room for maxItems elements
     /**
      * Instantiate the SortedList object of a size maxItem
+     *
      * @param maxItems
      */
     public SortedList(int maxItems) {
@@ -25,11 +26,10 @@ public class SortedList extends List {
 
     // Instantiates and returns a reference to an empty list object 
     // with room for 100 elements
-
     /**
      * Instantiate the SortedList object size of 100
      */
-        public SortedList() {
+    public SortedList() {
         super(100);
     }
 
