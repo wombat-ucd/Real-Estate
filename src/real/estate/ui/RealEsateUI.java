@@ -200,8 +200,26 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         jButton7.setText("jButton1");
         jPanel1.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+
+        txtLotNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLotNumberActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtLotNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 190, -1));
+
+        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFirstNameActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 190, -1));
+
+        txtLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLastNameActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 190, -1));
 
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +228,12 @@ public class RealEsateUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 190, -1));
+
+        txtSqFt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSqFtActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtSqFt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 190, -1));
         jPanel1.add(txtNumberOfBedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 190, -1));
 
@@ -280,6 +304,7 @@ public class RealEsateUI extends javax.swing.JFrame {
             if (propertyList.isThere(house)) {
                 propertyList.delete(house);
                 lblStatus.setText("House deleted");
+                clearHouse();
             } else {
                 lblStatus.setText("Lot number not on list");
             }
@@ -306,8 +331,24 @@ public class RealEsateUI extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
-        // TODO add your handling code here:
+        txtSqFt.requestFocus();
     }//GEN-LAST:event_txtPriceActionPerformed
+
+    private void txtLotNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLotNumberActionPerformed
+        txtFirstName.requestFocus();
+    }//GEN-LAST:event_txtLotNumberActionPerformed
+
+    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
+        txtLastName.requestFocus();
+    }//GEN-LAST:event_txtFirstNameActionPerformed
+
+    private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
+        txtPrice.requestFocus();
+    }//GEN-LAST:event_txtLastNameActionPerformed
+
+    private void txtSqFtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSqFtActionPerformed
+        txtNumberOfBedrooms.requestFocus();
+    }//GEN-LAST:event_txtSqFtActionPerformed
 
     /**
      * @param args the command line arguments
