@@ -5,10 +5,18 @@
  */
 package real.estate.ui;
 
+import com.alee.extended.panel.GroupPanel;
+import com.alee.extended.time.ClockType;
+import com.alee.extended.time.WebClock;
 import com.alee.laf.WebLookAndFeel;
+import com.alee.managers.notification.NotificationIcon;
+import com.alee.managers.notification.NotificationManager;
+import com.alee.managers.notification.WebNotificationPopup;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.JLabel;
 import real.estate.dao.ListHouse;
 import real.estate.dao.impl.SortedList;
 import real.estate.io.HouseFile;
@@ -21,6 +29,7 @@ public class RealEsateUI extends javax.swing.JFrame {
 
     private SortedList propertyList = new SortedList();
     ListHouse house;
+    private final static int NOTIFICATION_TIME = 3000;
 
     /**
      * Creates new form RealEsateUI
@@ -75,6 +84,39 @@ public class RealEsateUI extends javax.swing.JFrame {
         lblStatus.setText("");
     }
 
+    private void showNotification(String message, Icon icon) {
+
+        WebNotificationPopup notificationPopup = new WebNotificationPopup();
+        notificationPopup.setIcon(NotificationIcon.clock);
+        notificationPopup.setDisplayTime(NOTIFICATION_TIME);
+        WebClock clock = new WebClock();
+        clock.setClockType(ClockType.timer);
+        clock.setTimeLeft(NOTIFICATION_TIME - 1000);
+        notificationPopup.setIcon(icon);
+        JLabel label = new JLabel(message);
+        notificationPopup.setContent(new GroupPanel(1, label));
+
+        NotificationManager.setLocation(NotificationManager.NORTH_EAST);
+        NotificationManager.showNotification(notificationPopup);
+        clock.start();
+
+    }
+
+    private void showInformationNotification(String message) {
+        showNotification(message, NotificationIcon.information.getIcon());
+        //lblStatus.setText("List reset");
+    }
+
+    private void showSuccessNotification(String message) {
+        showNotification(message, NotificationIcon.plus.getIcon());
+        //lblStatus.setText("List reset");
+    }
+
+    private void showErrorNotification(String message) {
+        showNotification(message, NotificationIcon.error.getIcon());
+        //lblStatus.setText("List reset");
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -108,6 +150,7 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Real Estate");
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -124,27 +167,27 @@ public class RealEsateUI extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Number of Bedrooms:");
-        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Square Feet:");
-        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+        panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Price:");
-        panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, -1, -1));
+        panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Last Name:");
-        panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, -1, -1));
+        panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("First Name:");
-        panel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+        panel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Lot Number:");
-        panel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
+        panel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
 
         btnFind.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnFind.setText("Find");
@@ -153,7 +196,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnFindActionPerformed(evt);
             }
         });
-        panel.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 160, -1));
+        panel.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 160, -1));
 
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnDelete.setText("Delete");
@@ -162,7 +205,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        panel.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 160, -1));
+        panel.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 160, -1));
 
         btnNext.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnNext.setText("Next");
@@ -171,7 +214,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnNextActionPerformed(evt);
             }
         });
-        panel.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 160, -1));
+        panel.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 160, -1));
 
         btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAdd.setText("Add");
@@ -180,7 +223,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnAddActionPerformed(evt);
             }
         });
-        panel.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 170, -1));
+        panel.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 170, -1));
 
         btnClear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnClear.setText("Clear");
@@ -189,7 +232,7 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnClearActionPerformed(evt);
             }
         });
-        panel.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 170, -1));
+        panel.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 170, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnReset.setText("Reset");
@@ -198,24 +241,55 @@ public class RealEsateUI extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        panel.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 170, -1));
+        panel.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 170, -1));
 
         jButton7.setText("jButton1");
         panel.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
-        panel.add(txtLotNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 190, -1));
-        panel.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 190, -1));
-        panel.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 190, -1));
 
+        txtLotNumber.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtLotNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLotNumberActionPerformed(evt);
+            }
+        });
+        panel.add(txtLotNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 190, -1));
+
+        txtFirstName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtFirstName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFirstNameActionPerformed(evt);
+            }
+        });
+        panel.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 190, -1));
+
+        txtLastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtLastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLastNameActionPerformed(evt);
+            }
+        });
+        panel.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 190, -1));
+
+        txtPrice.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPriceActionPerformed(evt);
             }
         });
-        panel.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 190, -1));
-        panel.add(txtSqFt, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 190, -1));
-        panel.add(txtNumberOfBedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 190, -1));
+        panel.add(txtPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 190, -1));
 
-        getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 480));
+        txtSqFt.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtSqFt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSqFtActionPerformed(evt);
+            }
+        });
+        panel.add(txtSqFt, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 190, -1));
+
+        txtNumberOfBedrooms.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        panel.add(txtNumberOfBedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 190, -1));
+
+        getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -233,17 +307,20 @@ public class RealEsateUI extends javax.swing.JFrame {
             house = (ListHouse) propertyList.getNextItem();
             showHouse(house);
         }
-        lblStatus.setText("List reset");
+        showInformationNotification("List reset!");
+        //lblStatus.setText("List reset");
+
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        // TODO add your handling code here:
         if (propertyList.lengthIs() == 0) {
-            lblStatus.setText("list is empty!");
+            //lblStatus.setText("list is empty!");
+            showInformationNotification("List is empty!");
         } else {
             house = (ListHouse) propertyList.getNextItem();
             showHouse(house);
-            lblStatus.setText("Next house displayed");
+            //lblStatus.setText("Next house displayed");
+            showSuccessNotification("Next house displayed!");
         }
     }//GEN-LAST:event_btnNextActionPerformed
 
@@ -264,14 +341,17 @@ public class RealEsateUI extends javax.swing.JFrame {
         try {
             house = getHouse();
             if (propertyList.isThere(house)) {
-                lblStatus.setText("Lot number already in use");
+                //lblStatus.setText("Lot number already in use");
+                showErrorNotification("Lot number already in use!");
             } else {
                 propertyList.insert(house);
-                lblStatus.setText("House added to list");
+                //lblStatus.setText("House added to list");
+                showSuccessNotification("House added to list!");
             }
         } catch (NumberFormatException badHouseData) {
             // Text field info incorrectly formated 
-            lblStatus.setText("Number? " + badHouseData.getMessage());
+            //lblStatus.setText("Number? " + badHouseData.getMessage());
+            showErrorNotification("Number? " + badHouseData.getMessage());
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -281,12 +361,15 @@ public class RealEsateUI extends javax.swing.JFrame {
             house = getHouse();
             if (propertyList.isThere(house)) {
                 propertyList.delete(house);
-                lblStatus.setText("House deleted");
+                //lblStatus.setText("House deleted");
+                showSuccessNotification("House deleted!");
             } else {
-                lblStatus.setText("Lot number not on list");
+                showInformationNotification("Lot number not on list!");
+                //lblStatus.setText("Lot number not on list");
             }
         } catch (NumberFormatException badHouseData) {
-            lblStatus.setText("Number? " + badHouseData.getMessage());
+            //lblStatus.setText("Number? " + badHouseData.getMessage());
+            showErrorNotification("Number? " + badHouseData.getMessage());
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
@@ -298,18 +381,38 @@ public class RealEsateUI extends javax.swing.JFrame {
             if (propertyList.isThere(house)) {
                 house = (ListHouse) propertyList.retrieve(house);
                 showHouse(house);
-                lblStatus.setText("House found");
+                //lblStatus.setText("House found");
+                showSuccessNotification("House found!");
             } else {
-                lblStatus.setText("House not found");
+                showInformationNotification("House not found!");
+                //lblStatus.setText("House not found");
             }
         } catch (NumberFormatException badHouseData) {
-            // Text field info incorrectly formated statusLabel.setText("Number? " + badHouseData.getMessage()); } 
+            // Text field info incorrectly formated 
+            //lblStatus.setText("Number? " + badHouseData.getMessage()); 
+            showErrorNotification("Number? " + badHouseData.getMessage());
         }
     }//GEN-LAST:event_btnFindActionPerformed
 
     private void txtPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPriceActionPerformed
-        // TODO add your handling code here:
+        txtSqFt.requestFocus();
     }//GEN-LAST:event_txtPriceActionPerformed
+
+    private void txtLotNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLotNumberActionPerformed
+        txtFirstName.requestFocus();
+    }//GEN-LAST:event_txtLotNumberActionPerformed
+
+    private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
+        txtLastName.requestFocus();
+    }//GEN-LAST:event_txtFirstNameActionPerformed
+
+    private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
+        txtPrice.requestFocus();
+    }//GEN-LAST:event_txtLastNameActionPerformed
+
+    private void txtSqFtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSqFtActionPerformed
+        txtNumberOfBedrooms.requestFocus();
+    }//GEN-LAST:event_txtSqFtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,8 +420,9 @@ public class RealEsateUI extends javax.swing.JFrame {
     public static void main(String args[]) {
         /* Set the Web look and feel */
         //<editor-fold defaultstate="collapsed" desc="Web Look and feel setting code ">
-        
-         WebLookAndFeel.install ();
+
+        WebLookAndFeel.install();
+        WebLookAndFeel.initializeManagers ();
         //</editor-fold>
 
         /* Create and display the form */
