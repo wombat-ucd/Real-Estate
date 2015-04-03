@@ -8,20 +8,27 @@ package real.estate.dao.impl;
 import real.estate.dao.*;
 
 /**
- *
- *
+ * SortedList class 
  */
 public class SortedList extends List {
 
     // Instantiates and returns a reference to an empty list object 
     // with room for maxItems elements
+    /**
+     * Instantiate the SortedList object of a size maxItem
+     * @param maxItems
+     */
     public SortedList(int maxItems) {
         super(maxItems);
     }
 
     // Instantiates and returns a reference to an empty list object 
-    // with room for 100 elements 
-    public SortedList() {
+    // with room for 100 elements
+
+    /**
+     * Instantiate the SortedList object size of 100
+     */
+        public SortedList() {
         super(100);
     }
 
