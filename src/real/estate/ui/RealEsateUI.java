@@ -22,7 +22,7 @@ import real.estate.dao.impl.SortedList;
 import real.estate.io.HouseFile;
 /**
  *
- * @author Chathu
+ * @author Wombat
  */
 public class RealEsateUI extends javax.swing.JFrame {
 

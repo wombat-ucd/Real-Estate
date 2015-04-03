@@ -21,7 +21,7 @@ import real.estate.dao.impl.SortedList;
 
 /**
  *
- * @author Chathu
+ * @author Wombat
  */
 public class HouseFile {
 

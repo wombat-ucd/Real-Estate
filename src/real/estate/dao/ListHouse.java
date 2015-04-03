@@ -7,7 +7,7 @@ package real.estate.dao;
 
 /**
  *
- * @author User
+ * @author Wombat
  */
 public class ListHouse implements Listable {
 

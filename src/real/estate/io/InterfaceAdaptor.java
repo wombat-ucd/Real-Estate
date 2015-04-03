@@ -11,7 +11,7 @@ import java.lang.reflect.Type;
 
 /**
  *
- * @author Chathu
+ * @author Wombat
  */
 public final class InterfaceAdaptor<T> implements JsonSerializer<T>, JsonDeserializer<T> {
 

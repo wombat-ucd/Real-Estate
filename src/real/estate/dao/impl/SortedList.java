@@ -9,7 +9,7 @@ import real.estate.dao.*;
 
 /**
  * SortedList class 
- * @author 
+ * @author Wombat
  */
 public class SortedList extends List {
 

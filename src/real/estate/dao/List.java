@@ -7,7 +7,7 @@ package real.estate.dao;
 
 /**
  *
- * @author Chathu
+ * @author Wombat
  */
 public abstract class List {
 
