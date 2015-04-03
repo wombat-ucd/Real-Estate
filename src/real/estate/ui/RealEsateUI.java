@@ -440,7 +440,6 @@ public class RealEsateUI extends javax.swing.JFrame {
         //<editor-fold defaultstate="collapsed" desc="Web Look and feel setting code ">
 
         WebLookAndFeel.install();
-        WebLookAndFeel.initializeManagers ();
         //</editor-fold>
 
         /* Create and display the form */
