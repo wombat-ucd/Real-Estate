@@ -351,7 +351,8 @@ public class RealEsateUI extends javax.swing.JFrame {
             house = getHouse();
             if (propertyList.isThere(house)) {
                 propertyList.delete(house);
-                showSuccessNotification("House deleted!");
+                clearHouse();
+                showInformationNotification("House deleted!");
             } else {
                 showInformationNotification("Lot number not on list!");
             }
