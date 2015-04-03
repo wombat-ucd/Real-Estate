@@ -27,7 +27,7 @@ import real.estate.io.HouseFile;
 public class RealEsateUI extends javax.swing.JFrame {
 
     private SortedList propertyList = new SortedList();
-    ListHouse house;
+    private ListHouse house;
     private final static int NOTIFICATION_TIME = 3000;
 
     /**
