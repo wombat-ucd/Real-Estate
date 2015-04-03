@@ -18,34 +18,70 @@ public class ListHouse implements Listable {
     private int squareFeet;
     private int numberOfBedRooms;
 
+    /**
+     * Instantiate the new ListHouse object 
+     */
     public ListHouse(){
         
     }
 
+    /**
+     * Return the firstName
+     * @return
+     */
     public String firstName() {
         return firstName;
     }
 
+    /**
+     * Return the lastName
+     * @return
+     */
     public String lastName() {
         return lastName;
     }
 
+    /**
+     * Return the lotNumber
+     * @return lotNumber
+     */
     public int lotNumber() {
         return lotNumber;
     }
 
+    /**
+     * Return the price
+     * @return price
+     */
     public int price() {
         return price;
     }
 
+    /**
+     * Return the squareFeet
+     * @return squareFeet
+     */
     public int squareFeet() {
         return squareFeet;
     }
 
+    /**
+     * Return the numberOfBedRooms
+     * @return numberOfBedRooms
+     */
     public int numberOfBedRooms() {
         return numberOfBedRooms;
     }
     
+    /**
+     * Parameterized constructor to instantiate new ListHouse object 
+     * @param lastName
+     * @param firstName
+     * @param lotNumber
+     * @param price
+     * @param squareFeet
+     * @param bedRooms
+     */
     public ListHouse(String lastName, String firstName, int lotNumber, int price, int squareFeet, int bedRooms) {
         this.lastName = lastName;
         this.firstName = firstName;
@@ -55,12 +91,21 @@ public class ListHouse implements Listable {
         this.numberOfBedRooms = bedRooms;
     }
 
+    /**
+     * Create a copy of the current object
+     * @return
+     */
     @Override
     public Listable copy() {
         ListHouse house = new ListHouse(lastName, firstName, lotNumber, price, squareFeet, numberOfBedRooms);
         return house;
     }
 
+    /**
+     * Houses are compared  based on their lot numbers
+     * @param otherHouse
+     * @return
+     */
     @Override
     public int compareTo(Listable otherHouse) {
         ListHouse thisHouse = (ListHouse) otherHouse;
