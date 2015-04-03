@@ -20,7 +20,6 @@ import javax.swing.JLabel;
 import real.estate.dao.ListHouse;
 import real.estate.dao.impl.SortedList;
 import real.estate.io.HouseFile;
-import javax.swing.JButton;
 /**
  *
  * @author Chathu
