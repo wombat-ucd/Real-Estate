@@ -14,7 +14,7 @@ public class ListHouse implements Listable {
     private String lastName;
     private String firstName;
     private int lotNumber;
-    private int price;
+    private double price;
     private int squareFeet;
     private int numberOfBedRooms;
 
@@ -53,7 +53,7 @@ public class ListHouse implements Listable {
      * Return the price
      * @return price
      */
-    public int price() {
+    public double price() {
         return price;
     }
 
@@ -82,7 +82,7 @@ public class ListHouse implements Listable {
      * @param squareFeet
      * @param bedRooms
      */
-    public ListHouse(String lastName, String firstName, int lotNumber, int price, int squareFeet, int bedRooms) {
+    public ListHouse(String lastName, String firstName, int lotNumber, double price, int squareFeet, int bedRooms) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.lotNumber = lotNumber;
