@@ -165,83 +165,101 @@ public class RealEsateUI extends javax.swing.JFrame {
         lblStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         panel.add(lblStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 260, 20));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Number of Bedrooms:");
         panel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Square Feet:");
         panel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("Price:");
         panel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Last Name:");
         panel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setText("First Name:");
         panel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Lot Number:");
         panel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
 
         btnFind.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnFind.setIcon(new javax.swing.ImageIcon(getClass().getResource("/real/estate/res/find.png"))); // NOI18N
         btnFind.setText("Find");
+        btnFind.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnFind.setIconTextGap(10);
         btnFind.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFindActionPerformed(evt);
             }
         });
-        panel.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 160, -1));
+        panel.add(btnFind, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 160, 30));
 
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/real/estate/res/delete.png"))); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnDelete.setIconTextGap(10);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
-        panel.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 160, -1));
+        panel.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 160, 30));
 
         btnNext.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/real/estate/res/next.png"))); // NOI18N
         btnNext.setText("Next");
+        btnNext.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnNext.setIconTextGap(10);
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
             }
         });
-        panel.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 160, -1));
+        panel.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 340, 160, 30));
 
         btnAdd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/real/estate/res/add.png"))); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnAdd.setIconTextGap(10);
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
-        panel.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 170, -1));
+        panel.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 160, 30));
 
         btnClear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/real/estate/res/clear.png"))); // NOI18N
         btnClear.setText("Clear");
+        btnClear.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnClear.setIconTextGap(10);
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
-        panel.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 170, -1));
+        panel.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, 160, 30));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/real/estate/res/reset.png"))); // NOI18N
         btnReset.setText("Reset");
+        btnReset.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnReset.setIconTextGap(10);
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
             }
         });
-        panel.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 170, -1));
+        panel.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 160, 30));
 
         jButton7.setText("jButton1");
         panel.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
