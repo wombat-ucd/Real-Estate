@@ -38,7 +38,6 @@ public class RealEsateUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setIconImage(new javax.swing.ImageIcon(this.getClass().getResource("/real/estate/res/logo.png")).getImage());
         try {
-            //HouseFile.writeJSONToFile(propertyList);
             propertyList = HouseFile.readJSONFileToList();
         } catch (IOException ex) {
             Logger.getLogger(RealEsateUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -80,11 +79,9 @@ public class RealEsateUI extends javax.swing.JFrame {
         txtPrice.setText("");
         txtSqFt.setText("");
         txtNumberOfBedrooms.setText("");
-        
     }
 
     private void showNotification(String message, Icon icon) {
-
         WebNotificationPopup notificationPopup = new WebNotificationPopup();
         notificationPopup.setIcon(NotificationIcon.clock);
         notificationPopup.setDisplayTime(NOTIFICATION_TIME);
@@ -92,28 +89,24 @@ public class RealEsateUI extends javax.swing.JFrame {
         clock.setClockType(ClockType.timer);
         clock.setTimeLeft(NOTIFICATION_TIME - 1000);
         notificationPopup.setIcon(icon);
-        JLabel label = new JLabel(message);
-        notificationPopup.setContent(new GroupPanel(1, label));
+        JLabel lblMessage = new JLabel(message);
+        notificationPopup.setContent(new GroupPanel(1, lblMessage));
 
         NotificationManager.setLocation(NotificationManager.NORTH_EAST);
         NotificationManager.showNotification(notificationPopup);
         clock.start();
-
     }
 
     private void showInformationNotification(String message) {
         showNotification(message, NotificationIcon.information.getIcon());
-        
     }
 
     private void showSuccessNotification(String message) {
         showNotification(message, NotificationIcon.plus.getIcon());
-       
     }
 
     private void showErrorNotification(String message) {
         showNotification(message, NotificationIcon.error.getIcon());
-        
     }
 
     /**
@@ -304,7 +297,6 @@ public class RealEsateUI extends javax.swing.JFrame {
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         clearHouse();
-
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -316,18 +308,14 @@ public class RealEsateUI extends javax.swing.JFrame {
             showHouse(house);
         }
         showInformationNotification("List reset!");
-        
-
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         if (propertyList.lengthIs() == 0) {
-           
             showInformationNotification("List is empty!");
         } else {
             house = (ListHouse) propertyList.getNextItem();
             showHouse(house);
-           
             showSuccessNotification("Next house displayed!");
         }
     }//GEN-LAST:event_btnNextActionPerformed
@@ -342,42 +330,32 @@ public class RealEsateUI extends javax.swing.JFrame {
         } finally {
             System.exit(0);
         }
-
     }//GEN-LAST:event_formWindowClosing
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         try {
             house = getHouse();
             if (propertyList.isThere(house)) {
-                
                 showErrorNotification("Lot number already in use!");
             } else {
                 propertyList.insert(house);
-               
                 showSuccessNotification("House added to list!");
             }
         } catch (NumberFormatException badHouseData) {
-            // Text field info incorrectly formated 
-            
             showErrorNotification("Number? " + badHouseData.getMessage());
         }
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
         try {
             house = getHouse();
             if (propertyList.isThere(house)) {
                 propertyList.delete(house);
-
-                
                 showSuccessNotification("House deleted!");
             } else {
                 showInformationNotification("Lot number not on list!");
-               
             }
         } catch (NumberFormatException badHouseData) {
-            
             showErrorNotification("Number? " + badHouseData.getMessage());
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -390,15 +368,11 @@ public class RealEsateUI extends javax.swing.JFrame {
             if (propertyList.isThere(house)) {
                 house = (ListHouse) propertyList.retrieve(house);
                 showHouse(house);
-                
                 showSuccessNotification("House found!");
             } else {
                 showInformationNotification("House not found!");
-                
             }
         } catch (NumberFormatException badHouseData) {
-            // Text field info incorrectly formated 
-            
             showErrorNotification("Number? " + badHouseData.getMessage());
         }
     }//GEN-LAST:event_btnFindActionPerformed
