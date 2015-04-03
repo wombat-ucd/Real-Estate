@@ -133,10 +133,10 @@ public class RealEsateUI extends javax.swing.JFrame {
         btnReset = new javax.swing.JButton();
         txtLotNumber = new javax.swing.JFormattedTextField();
         txtFirstName = new javax.swing.JTextField();
+        txtLastName = new javax.swing.JTextField();
         txtPrice = new javax.swing.JFormattedTextField();
         txtSqFt = new javax.swing.JFormattedTextField();
         txtNumberOfBedrooms = new javax.swing.JFormattedTextField();
-        txtLastName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Real Estate");
@@ -259,6 +259,9 @@ public class RealEsateUI extends javax.swing.JFrame {
         txtFirstName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         panel.add(txtFirstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 190, -1));
 
+        txtLastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        panel.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 190, -1));
+
         txtPrice.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
         txtPrice.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtPrice.addActionListener(new java.awt.event.ActionListener() {
@@ -280,9 +283,6 @@ public class RealEsateUI extends javax.swing.JFrame {
         txtNumberOfBedrooms.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0"))));
         txtNumberOfBedrooms.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         panel.add(txtNumberOfBedrooms, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 280, 190, -1));
-
-        txtLastName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        panel.add(txtLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 190, -1));
 
         getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 480));
 
